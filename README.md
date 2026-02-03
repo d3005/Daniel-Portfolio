@@ -146,7 +146,7 @@ npm install
 npm run dev
 ```
 
-### 4. Access Admin Panel
+### 4. Access Admin Panel (Local Development)
 ```bash
 URL: http://localhost:5173/admin
 Password: DJ@3007
@@ -154,8 +154,14 @@ Password: DJ@3007
 
 ---
 
-## 📄 License
-Distributed under the **MIT License**.
+## 🔗 Quick Links
+
+- [Live Portfolio](https://www.daniel-portfolio.in)
+- [Admin Panel](https://www.daniel-portfolio.in/admin)
+- [API Health Check](https://daniel-portfolio-udhf.onrender.com/health)
+- [Deployment Guide](./DEPLOYMENT_GUIDE.md)
+- [API Documentation](./API_DOCUMENTATION.md)
+- [Monitoring Setup](./DATADOG_SETUP_GUIDE.md)
 
 ---
 
@@ -183,14 +189,14 @@ Distributed under the **MIT License**.
 
 ---
 
-## 🔗 Quick Links
+## 🔐 Admin Access (Production)
 
-- [Live Portfolio](https://www.daniel-portfolio.in)
-- [Admin Panel](https://www.daniel-portfolio.in/admin)
-- [API Health Check](https://daniel-portfolio-udhf.onrender.com/health)
-- [Deployment Guide](./DEPLOYMENT_GUIDE.md)
-- [API Documentation](./API_DOCUMENTATION.md)
-- [Monitoring Setup](./DATADOG_SETUP_GUIDE.md)
+**URL**: https://www.daniel-portfolio.in/admin
+**Password**: DJ@3007
+
+For local development only:
+- **URL**: http://localhost:5173/admin
+- **Password**: DJ@3007
 
 ---
 
@@ -219,50 +225,6 @@ Distributed under the **MIT License**.
 
 ---
 
-## 📦 Dependencies
-
-### Frontend Dependencies (49 packages)
-- Core: React, Three.js, Framer Motion
-- AI: Google Gemini SDK
-- Monitoring: Datadog Browser RUM/Logs
-- UI: Lucide React, Firebase
-
-### Backend Dependencies (13 packages)
-- Core: Express, TypeScript, CORS
-- Monitoring: Datadog APM
-- Database: Firebase Admin
-- Utilities: UUID, Axios
-
----
-
-## 🔒 Security Features
-
-- **CORS Protection** - Restricts API access to authorized domains
-- **Environment Variables** - Secure API keys and credentials
-- **Backend-Mediated Database** - Prevents credential exposure
-- **Datadog Monitoring** - Real-time security and performance tracking
-- **SSL Encryption** - HTTPS for all communications
-
----
-
-## 📈 Performance Metrics
-
-- **Core Web Vitals**: Tracked via Datadog RUM
-- **API Response Times**: Monitored with Datadog APM
-- **User Sessions**: 20% recorded for analysis
-- **Error Tracking**: Automatic error detection and alerting
-
----
-
-## 🤖 AI Features
-
-- **Contextual Chatbot**: Answers questions about portfolio content
-- **RAG Integration**: Retrieves relevant information from portfolio
-- **Quick Suggestions**: Pre-defined question buttons
-- **Real-time Responses**: Fast, contextual answers
-
----
-
 ## 🎨 Design Features
 
 - **Interactive 3D Scenes**: Multiple 3D environments
@@ -273,16 +235,6 @@ Distributed under the **MIT License**.
 
 ---
 
-## 🎯 Admin Features
-
-- **Message Management**: View and manage contact form submissions
-- **Read/Unread Status**: Track message status
-- **Delete Messages**: Remove unwanted messages
-- **Activity Monitoring**: See visitor interactions
-- **Secure Access**: Password-protected dashboard
-
----
-
 ## 📊 Monitoring Features
 
 - **Real User Monitoring**: Track actual user behavior
@@ -290,6 +242,16 @@ Distributed under the **MIT License**.
 - **Error Detection**: Automatic error tracking and alerting
 - **Session Replay**: Record user sessions for analysis
 - **API Tracing**: Monitor backend performance and errors
+
+---
+
+## 🔒 Security Features
+
+- **CORS Protection** - Restricts API access to authorized domains
+- **Environment Variables** - Secure API keys and credentials
+- **Backend-Mediated Database** - Prevents credential exposure
+- **Datadog Monitoring** - Real-time security and performance tracking
+- **SSL Encryption** - HTTPS for all communications
 
 ---
 
