@@ -1,4 +1,4 @@
-# Daniel Joseph Kommu's Portfolio - Monorepo
+# Full-Stack Portfolio Application
 
 Complete full-stack portfolio application with React frontend, Node.js backend, and Datadog monitoring.
 
@@ -104,17 +104,17 @@ npm run dev
 ### Frontend (.env)
 ```env
 VITE_API_BASE_URL=http://localhost:3000
-VITE_GEMINI_API_KEY=your_key
-VITE_ADMIN_PASSWORD=DJ@3007
-VITE_DATADOG_APPLICATION_ID=your_id
-VITE_DATADOG_CLIENT_TOKEN=your_token
+VITE_GEMINI_API_KEY=your_gemini_api_key
+VITE_ADMIN_PASSWORD=your_secure_admin_password
+VITE_DATADOG_APPLICATION_ID=your_datadog_application_id
+VITE_DATADOG_CLIENT_TOKEN=your_datadog_client_token
 ```
 
 ### Backend (.env)
 ```env
 NODE_ENV=development
 PORT=3000
-DATADOG_API_KEY=your_key
+DATADOG_API_KEY=your_datadog_api_key
 DATADOG_SERVICE=portfolio-backend
 DD_TRACE_ENABLED=true
 ```
@@ -221,10 +221,6 @@ For deployment and setup help:
 ## 📄 License
 
 MIT
-
-## 👤 Author
-
-Daniel Joseph Kommu
 
 ---
 
