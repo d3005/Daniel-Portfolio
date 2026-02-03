@@ -9,6 +9,20 @@ React frontend with Express backend and Datadog monitoring.
 └── backend/      # Express.js (Render)
 ```
 
+## Tech Stack
+
+- **Frontend**: React 19, TypeScript, Three.js, Framer Motion, Tailwind CSS, Vite
+- **Backend**: Node.js, Express, TypeScript, Firebase Admin SDK
+- **Monitoring**: Datadog (APM, RUM, Logs)
+
+## Features
+
+- **3D Portfolio**: Interactive 3D environment built with Three.js
+- **AI Chatbot**: Intelligent chatbot integration powered by Google Gemini
+- **Secure API**: Backend-mediated access to portfolio data (Firebase)
+- **Monitoring**: Full-stack observability with Datadog APM and RUM
+- **Admin Panel**: Secure admin authentication and message management
+
 ## Quick Start
 
 **Frontend:**
