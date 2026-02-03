@@ -1,5 +1,5 @@
-import { initializeApp, cert } from 'firebase-admin/app';
-import { getDatabase } from 'firebase-admin/database';
+import { initializeApp, cert, App } from 'firebase-admin/app';
+import { getDatabase, Database } from 'firebase-admin/database';
 import dotenv from 'dotenv';
 
 dotenv.config();
@@ -18,8 +18,8 @@ const serviceAccount = {
   client_x509_cert_url: process.env.FIREBASE_CLIENT_CERT_URL,
 };
 
-let app;
-let database;
+let app: App | undefined;
+let database: Database | undefined;
 
 // Check if we have service account credentials
 if (process.env.FIREBASE_PRIVATE_KEY && process.env.FIREBASE_CLIENT_EMAIL) {
