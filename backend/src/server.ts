@@ -16,7 +16,6 @@ if (process.env.DD_TRACE_ENABLED === 'true') {
     hostname: 'localhost',
     port: 8126,
     logInjection: process.env.DD_LOGS_INJECTION === 'true',
-    analytics: true,
   });
 }
 
