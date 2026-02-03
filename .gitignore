@@ -43,3 +43,9 @@ coverage/
 # Temporary files
 tmp/
 temp/
+
+# Vercel
+.vercel/
+
+# Render
+render.yaml.local

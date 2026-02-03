@@ -1,151 +1,233 @@
-# Portfolio Backend API
+# Daniel Joseph Kommu's Portfolio - Monorepo
 
-Backend service for Daniel Joseph Kommu's 3D Portfolio website. Built with Express.js and TypeScript, with Datadog APM monitoring integration.
+Complete full-stack portfolio application with React frontend, Node.js backend, and Datadog monitoring.
 
-## Features
+## 📁 Project Structure
 
-- RESTful API endpoints for portfolio data
-- Contact form submission handling
-- Datadog APM tracing and logging
-- CORS support for frontend integration
-- Security headers with Helmet
-- Request ID tracking and correlation
-- Health check endpoint
-- Error handling and logging
+```
+Daniel-Portfolio/
+├── frontend/                    # React 3D Portfolio (Deployed to Vercel)
+│   ├── src/                    # React components and pages
+│   ├── public/                 # Static assets
+│   ├── package.json
+│   ├── vercel.json            # Vercel deployment config
+│   ├── vite.config.ts         # Vite build config
+│   └── README.md
+│
+├── backend/                     # Express.js API (Deployed to Render)
+│   ├── src/                    # TypeScript server code
+│   ├── package.json
+│   ├── render.yaml            # Render deployment config
+│   ├── tsconfig.json
+│   └── README.md
+│
+└── Documentation files (root)
+    ├── DEPLOYMENT_GUIDE.md
+    ├── DEPLOYMENT_CHECKLIST.md
+    ├── DATADOG_SETUP_GUIDE.md
+    ├── API_DOCUMENTATION.md
+    └── DEPLOYMENT_SUMMARY.md
+```
 
-## Prerequisites
+## 🚀 Quick Start
 
-- Node.js >= 18.0.0
-- npm >= 9.0.0
-- Datadog API Key (for APM monitoring)
-
-## Installation
-
+### Frontend Development
 ```bash
-cd portfolio-backend
+cd frontend
 npm install
-```
-
-## Environment Variables
-
-Copy `.env.example` to `.env` and fill in the required values:
-
-```bash
-cp .env.example .env
-```
-
-Key environment variables:
-- `NODE_ENV`: Set to `production` for Render deployment
-- `PORT`: Server port (default: 3000)
-- `FRONTEND_URL`: Frontend URL for CORS (e.g., https://yourdomain.vercel.app)
-- `DATADOG_API_KEY`: Your Datadog API key
-- `DATADOG_SERVICE`: Service name for Datadog
-- `DD_TRACE_ENABLED`: Enable Datadog tracing (true/false)
-
-## Development
-
-```bash
-# Start development server with hot reload
 npm run dev
-
-# Build TypeScript
-npm run build
-
-# Run production build
-npm start
-
-# Linting
-npm run lint
-
-# Run tests
-npm test
 ```
 
-## API Endpoints
+### Backend Development
+```bash
+cd backend
+npm install
+npm run dev
+```
 
-### Health Check
-- `GET /health` - Check server health and status
+## 📊 Project Overview
 
-### API Version
-- `GET /api/v1` - Get API documentation and available endpoints
+### Frontend (React + Vite)
+- 3D interactive portfolio with Three.js
+- Framer Motion animations
+- Datadog RUM monitoring
+- Admin authentication
+- AI chatbot powered by Google Gemini
+- Fully responsive design
+
+**Technologies**: React 19, TypeScript, Tailwind CSS, Three.js, Vite
+
+**Deployment**: Vercel (https://portfolio-XXXXX.vercel.app)
+
+### Backend (Express.js)
+- RESTful API with 6 endpoints
+- Datadog APM tracing
+- CORS configuration
+- Request tracking
+- Contact form handling
+- Portfolio data API
+
+**Technologies**: Node.js, Express.js, TypeScript, Datadog
+
+**Deployment**: Render (https://portfolio-backend-XXXXX.onrender.com)
+
+### Monitoring (Datadog)
+- Full-stack APM tracing
+- RUM session recording
+- Centralized logging
+- Performance dashboards
+- Alert management
+
+## 📚 Documentation
+
+- **DEPLOYMENT_GUIDE.md** - Complete step-by-step deployment instructions
+- **DEPLOYMENT_CHECKLIST.md** - Quick reference checklist
+- **DATADOG_SETUP_GUIDE.md** - Datadog configuration guide
+- **API_DOCUMENTATION.md** - Backend API reference
+- **DEPLOYMENT_SUMMARY.md** - Architecture overview
+- **frontend/README.md** - Frontend setup instructions
+- **backend/README.md** - Backend setup instructions
+
+## 🔗 Important Links
+
+| Service | Link |
+|---------|------|
+| Frontend Dev | http://localhost:5173 |
+| Backend Dev | http://localhost:3000 |
+| Backend Health | http://localhost:3000/health |
+| Vercel Dashboard | https://vercel.com/dashboard |
+| Render Dashboard | https://dashboard.render.com |
+| Datadog Dashboard | https://app.datadoghq.com |
+
+## 🔧 Environment Variables
+
+### Frontend (.env)
+```env
+VITE_API_BASE_URL=http://localhost:3000
+VITE_GEMINI_API_KEY=your_key
+VITE_ADMIN_PASSWORD=DJ@3007
+VITE_DATADOG_APPLICATION_ID=your_id
+VITE_DATADOG_CLIENT_TOKEN=your_token
+```
+
+### Backend (.env)
+```env
+NODE_ENV=development
+PORT=3000
+DATADOG_API_KEY=your_key
+DATADOG_SERVICE=portfolio-backend
+DD_TRACE_ENABLED=true
+```
+
+## 🚢 Deployment
+
+### Deploy Frontend to Vercel
+1. Go to https://vercel.com
+2. Import `frontend` directory
+3. Configure environment variables
+4. Deploy
+
+### Deploy Backend to Render
+1. Go to https://render.com
+2. Create Web Service from `backend` directory
+3. Configure environment variables
+4. Deploy
+
+See **DEPLOYMENT_GUIDE.md** for detailed instructions.
+
+## 📊 Monitoring Setup
+
+All deployments include Datadog monitoring:
+
+- **APM**: Backend traces and performance metrics
+- **RUM**: Frontend sessions and user interactions
+- **Logs**: Centralized log aggregation
+- **Dashboards**: Custom monitoring dashboards
+
+See **DATADOG_SETUP_GUIDE.md** for setup instructions.
+
+## 📝 API Endpoints
+
+### Health & Status
+- `GET /health` - Server health check
+- `GET /api/v1` - API info
 
 ### Portfolio Data
 - `GET /api/v1/portfolio` - Get portfolio information
 
-### Contact Form
+### Contact
 - `POST /api/v1/contact` - Submit contact form
-  ```json
-  {
-    "name": "John Doe",
-    "email": "john@example.com",
-    "subject": "Hello",
-    "message": "Your message here"
-  }
-  ```
+- `GET /api/v1/messages` - Get messages (admin)
 
-### Messages
-- `GET /api/v1/messages` - Get all contact messages (admin)
+### AI
+- `POST /api/v1/ai` - AI endpoint
 
-### AI Endpoint
-- `POST /api/v1/ai` - Process AI requests
-  ```json
-  {
-    "message": "Your question here",
-    "context": "Optional context"
-  }
-  ```
+See **API_DOCUMENTATION.md** for full details.
 
-## Datadog Integration
+## 🔐 Security
 
-The backend is pre-configured with Datadog APM tracing. Key features:
-
-- **Automatic HTTP instrumentation**: All requests are traced
-- **Request ID correlation**: Each request gets a unique ID for tracking
-- **Log injection**: Datadog context is injected into logs
-- **Custom spans**: API endpoints create custom spans for detailed tracing
-
-### Datadog Tags
-
-All traces and logs include:
-- `service`: Service name (portfolio-backend)
-- `env`: Environment (development/production)
-- `version`: Service version
-
-## Deployment to Render
-
-1. Push code to GitHub repository
-2. Connect repository to Render
-3. Create new Web Service from GitHub
-4. Configure environment variables (from `.env.example`)
-5. Deploy
-
-Render will automatically:
-- Build the project (`npm run build`)
-- Start the server (`npm start`)
-- Monitor health checks (`/health` endpoint)
-
-## CORS Configuration
-
-The backend allows requests from:
-- Frontend development server (localhost:5173)
-- Frontend production URL (from `FRONTEND_URL` env var)
-- Configured `PROD_FRONTEND_URL`
-
-## Security
-
-- Helmet.js for security headers
-- CORS validation
+- HTTPS on all endpoints
+- CORS properly configured
+- Environment variables for secrets
+- Security headers (Helmet)
 - Request validation
-- Error handling (no sensitive data leaks)
 
-## Monitoring
+## 💡 Features
 
-View logs and traces in Datadog:
-1. Go to Datadog dashboard
-2. Navigate to APM → Services
-3. Select "portfolio-backend" service
-4. View traces, logs, and metrics
+✅ Full-stack deployment  
+✅ Real-time monitoring with Datadog  
+✅ API-first architecture  
+✅ TypeScript for type safety  
+✅ Production-ready error handling  
+✅ Session recording and playback  
+✅ Automated CI/CD  
+✅ 3D portfolio experience  
+✅ AI chatbot integration  
+✅ Admin authentication  
 
-## License
+## 🛠️ Build & Deploy
+
+### Build Frontend
+```bash
+cd frontend
+npm run build
+```
+
+### Build Backend
+```bash
+cd backend
+npm run build
+```
+
+### Local Testing
+```bash
+# Terminal 1: Frontend
+cd frontend
+npm run dev
+
+# Terminal 2: Backend
+cd backend
+npm run dev
+```
+
+## 📞 Support
+
+For deployment and setup help:
+1. Check relevant documentation files
+2. Review Render/Vercel dashboards for logs
+3. Check Datadog for monitoring data
+4. Review API documentation
+
+## 📄 License
 
 MIT
+
+## 👤 Author
+
+Daniel Joseph Kommu
+
+---
+
+**Status**: ✅ Production Ready
+
+Last Updated: February 3, 2026
