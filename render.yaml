@@ -1,0 +1,42 @@
+services:
+  - type: web
+    name: portfolio-backend
+    runtime: node
+    runtimeVersion: 18
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 3000
+      - key: FRONTEND_URL
+        scope: run
+        value: # Will be set to your frontend Vercel URL
+      - key: DATADOG_API_KEY
+        scope: run
+      - key: DATADOG_SITE
+        value: datadoghq.com
+      - key: DATADOG_SERVICE
+        value: portfolio-backend
+      - key: DATADOG_ENV
+        value: production
+      - key: DATADOG_VERSION
+        value: 1.0.0
+      - key: DD_APM_ENABLED
+        value: "true"
+      - key: DD_LOGS_INJECTION
+        value: "true"
+      - key: DD_TRACE_ENABLED
+        value: "true"
+      - key: PROD_FRONTEND_URL
+        scope: run
+    healthCheckPath: /health
+    preDeployCommand: npm run build
+    autoDeploy: true
+    region: ohio
+    plan: standard
+    disk:
+      name: cache
+      mountPath: /var/cache
+      sizeGB: 10
