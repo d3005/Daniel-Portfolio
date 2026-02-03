@@ -6,6 +6,7 @@ import dotenv from 'dotenv';
 import tracer from 'dd-trace';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
+import { fetchPortfolioDataFromFirebase } from './firebase.js';
 
 // Initialize Datadog tracing before anything else
 if (process.env.DD_TRACE_ENABLED === 'true') {
@@ -262,6 +263,33 @@ app.get('/api/v1/messages', (req: Request, res: Response) => {
     span.setTag('error', true);
     span.log({ error });
     res.status(500).json({ error: 'Failed to fetch messages' });
+  } finally {
+    span.finish();
+  }
+});
+
+// Firebase portfolio data endpoint (secure - no API key exposed)
+app.get('/api/v1/portfolio/firebase', async (req: Request, res: Response) => {
+  const span = tracer.startSpan('api.portfolio.firebase.get');
+  
+  try {
+    const portfolioData = await fetchPortfolioDataFromFirebase();
+    
+    if (!portfolioData) {
+      span.setTag('firebase.empty', true);
+      return res.status(404).json({ error: 'Portfolio data not found in Firebase' });
+    }
+    
+    span.setTag('firebase.loaded', true);
+    res.json(portfolioData);
+  } catch (error: any) {
+    span.setTag('error', true);
+    span.log({ error: error.message });
+    console.error('Firebase error:', error);
+    res.status(500).json({ 
+      error: 'Failed to fetch portfolio data from Firebase',
+      message: process.env.NODE_ENV === 'development' ? error.message : undefined
+    });
   } finally {
     span.finish();
   }
