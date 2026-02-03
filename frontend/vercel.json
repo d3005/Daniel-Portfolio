@@ -35,11 +35,5 @@
     "VITE_API_BASE_URL": "https://daniel-portfolio-udhf.onrender.com",
     "VITE_GEMINI_API_KEY": "@gemini_api_key",
     "VITE_ADMIN_PASSWORD": "@admin_password"
-  },
-  "regions": [
-    "sfo1",
-    "iad1",
-    "lon1",
-    "syd1"
-  ]
+  }
 }
