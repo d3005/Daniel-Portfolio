@@ -42,6 +42,11 @@ export default function AdminDashboard() {
 
   // Fetch messages from Firebase
   useEffect(() => {
+    if (!database) {
+      setLoading(false);
+      return () => {};
+    }
+    
     const messagesRef = ref(database, 'messages');
     
     const unsubscribe = onValue(messagesRef, (snapshot) => {
@@ -69,16 +74,19 @@ export default function AdminDashboard() {
   };
 
   const markAsRead = async (id: string) => {
+    if (!database) return;
     const messageRef = ref(database, `messages/${id}`);
     await update(messageRef, { read: true });
   };
 
   const markAsUnread = async (id: string) => {
+    if (!database) return;
     const messageRef = ref(database, `messages/${id}`);
     await update(messageRef, { read: false });
   };
 
   const deleteMessage = async (id: string) => {
+    if (!database) return;
     const messageRef = ref(database, `messages/${id}`);
     await remove(messageRef);
     setShowDeleteConfirm(null);

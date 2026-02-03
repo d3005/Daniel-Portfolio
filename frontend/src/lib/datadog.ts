@@ -27,7 +27,7 @@ export function initializeDatadog() {
       trackResources: true,
       trackLongTasks: true,
       defaultPrivacyLevel: 'mask-user-input',
-      allowedTracingOrigins: [
+      allowedTracingUrls: [
         /https:\/\/portfolio-backend\.onrender\.com/,
         /http:\/\/localhost:3000/,
       ],
@@ -134,13 +134,13 @@ export function trackAPICall(
  * Set user information in Datadog
  */
 export function setUserInfo(userId: string, userName?: string, userEmail?: string) {
-  datadogRum.setUserAction({
+  datadogRum.setUser({
     id: userId,
     name: userName,
     email: userEmail,
   });
 
-  datadogLogs.setUserAction({
+  datadogLogs.setUser({
     id: userId,
     name: userName,
     email: userEmail,
@@ -151,8 +151,8 @@ export function setUserInfo(userId: string, userName?: string, userEmail?: strin
  * Add context to all future logs and actions
  */
 export function addGlobalContext(contextKey: string, contextValue: any) {
-  datadogRum.addUserAction(contextKey, { [contextKey]: contextValue });
-  datadogLogs.addLoggerGlobalContext(contextKey, contextValue);
+  datadogRum.addAction(contextKey, { [contextKey]: contextValue });
+  datadogLogs.setGlobalContextProperty(contextKey, contextValue);
 }
 
 export { datadogRum, datadogLogs };

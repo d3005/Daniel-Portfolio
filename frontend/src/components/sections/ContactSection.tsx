@@ -122,14 +122,16 @@ export default function ContactSection({ profile }: ContactSectionProps) {
 
     // 1. Try to save to Firebase (backup storage)
     try {
-      const messagesRef = ref(database, 'messages');
-      await push(messagesRef, {
-        ...formData,
-        timestamp: Date.now(),
-        read: false
-      });
-      firebaseSuccess = true;
-      console.log('✅ Message saved to Firebase');
+      if (database) {
+        const messagesRef = ref(database, 'messages');
+        await push(messagesRef, {
+          ...formData,
+          timestamp: Date.now(),
+          read: false
+        });
+        firebaseSuccess = true;
+        console.log('✅ Message saved to Firebase');
+      }
     } catch (firebaseErr) {
       console.warn('⚠️ Firebase save failed:', firebaseErr);
     }

@@ -232,6 +232,11 @@ export const usePortfolioData = () => {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
+    if (!database) {
+      setLoading(false);
+      return;
+    }
+    
     const portfolioRef = ref(database, 'portfolio');
     
     const unsubscribe = onValue(portfolioRef, (snapshot) => {

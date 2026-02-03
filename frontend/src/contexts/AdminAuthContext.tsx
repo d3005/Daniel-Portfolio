@@ -53,7 +53,7 @@ export function AdminAuthProvider({ children }: { children: ReactNode }) {
     }
 
     // Listen for Firebase auth state changes
-    const unsubscribe = onAuthStateChanged(auth, (firebaseUser) => {
+    const unsubscribe = auth ? onAuthStateChanged(auth, (firebaseUser) => {
       if (!isMounted) return;
       
       if (firebaseUser) {
@@ -68,7 +68,7 @@ export function AdminAuthProvider({ children }: { children: ReactNode }) {
       }
       setLoading(false);
       clearTimeout(timeout);
-    });
+    }) : () => {};
 
     return () => {
       isMounted = false;
@@ -102,6 +102,10 @@ export function AdminAuthProvider({ children }: { children: ReactNode }) {
 
   // Firebase email/password authentication (recommended)
   const loginWithEmail = async (email: string, password: string): Promise<boolean> => {
+    if (!auth) {
+      console.error('Firebase auth not initialized');
+      return false;
+    }
     try {
       const userCredential = await signInWithEmailAndPassword(auth, email, password);
       setUser(userCredential.user);
@@ -120,10 +124,12 @@ export function AdminAuthProvider({ children }: { children: ReactNode }) {
     sessionStorage.removeItem('admin_authenticated');
     
     // Sign out from Firebase
-    try {
-      await signOut(auth);
-    } catch (error) {
-      console.error('Firebase logout error:', error);
+    if (auth) {
+      try {
+        await signOut(auth);
+      } catch (error) {
+        console.error('Firebase logout error:', error);
+      }
     }
     
     setIsAuthenticated(false);
