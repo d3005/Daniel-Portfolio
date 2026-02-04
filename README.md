@@ -15,7 +15,6 @@ A professional full-stack portfolio featuring an interactive 3D environment, AI-
 | **Frontend** | Vercel | `https://www.daniel-portfolio.in` |
 | **Backend API** | Render | `https://daniel-portfolio-udhf.onrender.com` |
 | **Database** | Firebase | `Realtime Database` |
-| **Admin Panel** | Vercel | `https://www.daniel-portfolio.in/admin` |
 
 ---
 
@@ -144,12 +143,6 @@ npm run dev
 cd frontend
 npm install
 npm run dev
-```
-
-### 4. Access Admin Panel (Local Development)
-```bash
-URL: http://localhost:5173/admin
-Password: DJ@3007
 ```
 
 ---
