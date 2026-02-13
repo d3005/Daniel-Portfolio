@@ -4,7 +4,7 @@
 
 A professional full-stack portfolio featuring an interactive 3D environment, AI-driven chat integration, and enterprise-grade monitoring, deployed with modern cloud infrastructure.
 
-[Live Demo](#live-deployment) • [API Health](https://daniel-portfolio-udhf.onrender.com/health) • [Admin Panel](https://www.daniel-portfolio.in/admin) • [Documentation](./DEPLOYMENT_GUIDE.md)
+[Live Demo](#live-deployment) • [API Health](https://daniel-portfolio-udhf.onrender.com/health) • [Documentation](./DEPLOYMENT_GUIDE.md)
 
 ---
 
@@ -34,8 +34,6 @@ A professional full-stack portfolio featuring an interactive 3D environment, AI-
 - **Quick Suggestions** - Pre-defined question buttons for common queries
 
 ### 🔐 Authentication & Security
-- **Admin Panel** - Secure dashboard for managing messages and content
-- **Protected Routes** - Firebase-powered authentication for admin access
 - **Backend-Mediated Database** - Prevent credential exposure
 - **CORS Security** - Backend restricts access to authorized domains
 - **Datadog Monitoring** - Real-time security and performance monitoring
@@ -150,7 +148,6 @@ npm run dev
 ## 🔗 Quick Links
 
 - [Live Portfolio](https://www.daniel-portfolio.in)
-- [Admin Panel](https://www.daniel-portfolio.in/admin)
 - [API Health Check](https://daniel-portfolio-udhf.onrender.com/health)
 - [Deployment Guide](./DEPLOYMENT_GUIDE.md)
 - [API Documentation](./API_DOCUMENTATION.md)
@@ -176,20 +173,10 @@ npm run dev
 | Frontend | ✅ Live | https://www.daniel-portfolio.in |
 | Backend API | ✅ Live | https://daniel-portfolio-udhf.onrender.com |
 | Database | ✅ Connected | Firebase Realtime Database |
-| Admin Panel | ✅ Active | https://www.daniel-portfolio.in/admin |
 | SSL Certificate | ✅ Active | HTTPS Enabled |
 | Datadog Monitoring | ✅ Active | Real-time tracking |
 
 ---
-
-## 🔐 Admin Access (Production)
-
-**URL**: https://www.daniel-portfolio.in/admin
-**Password**: DJ@3007
-
-For local development only:
-- **URL**: http://localhost:5173/admin
-- **Password**: DJ@3007
 
 ---
 
