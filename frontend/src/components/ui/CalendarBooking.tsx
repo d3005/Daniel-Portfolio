@@ -32,8 +32,6 @@ export default function CalendarBooking({
             href={calendarUrl}
             target="_blank"
             rel="noopener noreferrer"
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
             className="inline-flex items-center gap-2 px-4 py-2 bg-accent-purple/20 hover:bg-accent-purple/30 text-accent-purple rounded-lg transition-colors"

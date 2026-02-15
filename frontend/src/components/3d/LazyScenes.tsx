@@ -1,6 +1,6 @@
-import { lazy, Suspense, ComponentType } from 'react';
-import { SceneSkeleton } from './Skeleton';
-import { Accessible3DWrapper } from './Accessibility';
+import { lazy, Suspense, type ComponentType } from 'react';
+import { SceneSkeleton } from '../ui/Skeleton';
+import { Accessible3DWrapper } from '../ui/Accessibility';
 
 // Lazy load all 3D scenes
 export const LazyHomeScene = lazy(() => import('../3d/scenes/HomeScene'));
