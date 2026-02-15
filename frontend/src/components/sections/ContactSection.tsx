@@ -3,6 +3,7 @@ import { motion, useInView, AnimatePresence } from 'framer-motion';
 import { Mail, Phone, MapPin, Send, Github, Linkedin, Twitter, CheckCircle, Loader2, AlertCircle, Sparkles } from 'lucide-react';
 import emailjs from '@emailjs/browser';
 import SectionHeader from '../ui/SectionHeader';
+import CalendarBooking from '../ui/CalendarBooking';
 import type { Profile } from '../../types/portfolio';
 import { ref, push } from 'firebase/database';
 import { database } from '../../lib/firebase';
@@ -271,7 +272,7 @@ export default function ContactSection({ profile }: ContactSectionProps) {
             </div>
 
             {/* Social links - enhanced */}
-            <div>
+            <div className="mb-8">
               <p className="text-sm text-dark-400 mb-4">Find me on social media</p>
               <div className="flex gap-3">
                 {socialLinks.map((social, index) => (
@@ -297,6 +298,9 @@ export default function ContactSection({ profile }: ContactSectionProps) {
                 ))}
               </div>
             </div>
+
+            {/* Calendar Booking */}
+            <CalendarBooking />
           </motion.div>
 
           {/* Contact Form - Enhanced */}
