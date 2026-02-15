@@ -2,6 +2,7 @@ import { Suspense, lazy } from 'react';
 import { motion } from 'framer-motion';
 import PageLayout from '../components/layout/PageLayout';
 import ProjectsSection from '../components/sections/ProjectsSection';
+import GitHubStats from '../components/sections/GitHubStats';
 import usePortfolioData from '../hooks/usePortfolioData';
 
 // Lazy load the 3D scene
@@ -31,6 +32,7 @@ export default function ProjectsPage() {
       <div className="min-h-screen">
         <Suspense fallback={<SectionLoader />}>
           <ProjectsSection projects={data.projects} />
+          <GitHubStats />
         </Suspense>
       </div>
     </PageLayout>
