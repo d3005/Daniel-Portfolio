@@ -735,10 +735,10 @@ function getFallbackResponse(message: string): string {
         return "Daniel's studying Computer Science with Data Science at Rise Krishna Sai Prakasam Group of Institutions. He's in his final years now (graduating 2026) and has maintained a good CGPA of 7.8. He's been balancing academics with all these internships and projects!";
       
       case 'certifications':
-        return "Daniel's collected quite a few certifications along the way! He's certified in GenAI Engineering from QWATCH, AWS from EduSkills, and Deep Learning from SmartInternz. Plus his internship certificates. He really believes in continuous learning.",
+        return "Daniel's collected quite a few certifications along the way! He's certified in GenAI Engineering from QWATCH, AWS from EduSkills, and Deep Learning from SmartInternz. Plus his internship certificates. He really believes in continuous learning.";
       
       case 'achievements':
-        return "Daniel's got some solid achievements! He hit 95% accuracy on fraud detection, improved recommendation CTR by 28%, and cut ML pipeline latency by 30%. He's also processed over 100K transactions and completed 3 internships while working on 5+ projects. He really delivers measurable results.",
+        return "Daniel's got some solid achievements! He hit 95% accuracy on fraud detection, improved recommendation CTR by 28%, and cut ML pipeline latency by 30%. He's also processed over 100K transactions and completed 3 internships while working on 5+ projects. He really delivers measurable results.";
     }
   }
   
