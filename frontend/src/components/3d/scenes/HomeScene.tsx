@@ -364,14 +364,14 @@ function HomeSceneContent({ isMobile = false }: { isMobile?: boolean }) {
       {/* Background starfield */}
       <ParticleStarfield count={350} isMobile={isMobile} />
       
-      {/* Main morphing blob - positioned far right */}
-      <MorphingBlob />
+      {/* Main morphing blob - skip on mobile (very expensive) */}
+      {!isMobile && <MorphingBlob />}
       
-      {/* Orbital rings around blob */}
-      <OrbitalRings />
+      {/* Orbital rings - simplify on mobile */}
+      {!isMobile && <OrbitalRings />}
       
       {/* Floating particles near blob */}
-      <FloatingParticles count={20} isMobile={isMobile} />
+      <FloatingParticles count={isMobile ? 10 : 20} isMobile={isMobile} />
       
       {/* Decorative floating shapes - skip on mobile */}
       {!isMobile && <FloatingShapes />}
