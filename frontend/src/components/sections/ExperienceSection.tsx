@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { MapPin, Calendar, Briefcase, GraduationCap, ChevronRight, Award, Rocket, Lightbulb } from 'lucide-react';
+import { MapPin, Calendar, Briefcase, GraduationCap, ChevronRight, Award, Rocket, Lightbulb, TrendingUp, Target, Zap, Users } from 'lucide-react';
 import SectionHeader from '../ui/SectionHeader';
 import type { Experience } from '../../types/portfolio';
 
@@ -253,6 +253,133 @@ interface ExperienceSectionProps {
   experience: Experience[];
 }
 
+// Why Hire Me Section Component
+function WhyHireMeSection() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+
+  const reasons = [
+    {
+      icon: Rocket,
+      title: "Production-Ready Experience",
+      description: "Not just theory. Built real GenAI systems at QWATCH, optimized fraud detection handling 100K+ transactions, and deployed APIs serving 500+ requests/hour.",
+      stat: "3 Internships",
+      statLabel: "Industry Experience"
+    },
+    {
+      icon: Target,
+      title: "Results-Driven Approach",
+      description: "Delivered measurable impact: 95% accuracy in fraud detection, 28% CTR improvement in recommendations, 30% latency reduction in ML pipelines.",
+      stat: "95%",
+      statLabel: "Fraud Detection Accuracy"
+    },
+    {
+      icon: Zap,
+      title: "Rapid Learning & Adaptation",
+      description: "Self-taught advanced GenAI/LLM concepts. Quickly adapts to new frameworks and tools. Stays current with latest AI research and industry trends.",
+      stat: "5+",
+      statLabel: "AI/ML Projects"
+    },
+    {
+      icon: Users,
+      title: "Full-Stack Capability",
+      description: "From frontend (React, Three.js) to backend (Node.js, Express) to ML/AI (TensorFlow, PyTorch, LLMs) to DevOps (Docker, AWS). End-to-end project ownership.",
+      stat: "Full Stack",
+      statLabel: "End-to-End Skills"
+    }
+  ];
+
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 50 }}
+      animate={isInView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.8 }}
+      className="mt-20 pt-16 border-t border-accent-cyan/20"
+    >
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={isInView ? { opacity: 1, y: 0 } : {}}
+        transition={{ delay: 0.2 }}
+        className="text-center mb-12"
+      >
+        <h2 className="heading-2 mb-4">
+          <span className="gradient-text">Why Hire Me?</span>
+        </h2>
+        <p className="text-dark-400 text-lg max-w-2xl mx-auto">
+          I bring a unique combination of technical expertise, practical experience, and results-driven mindset that makes me an ideal candidate for your team.
+        </p>
+      </motion.div>
+
+      <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+        {reasons.map((reason, index) => {
+          const Icon = reason.icon;
+          return (
+            <motion.div
+              key={reason.title}
+              initial={{ opacity: 0, y: 30 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ delay: 0.3 + index * 0.1 }}
+              whileHover={{ y: -5, scale: 1.02 }}
+              className="glass-card p-6 relative group overflow-hidden"
+            >
+              {/* Animated gradient background on hover */}
+              <motion.div
+                className="absolute inset-0 bg-gradient-to-br from-primary-500/10 via-accent-cyan/10 to-accent-purple/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+              />
+              
+              <div className="relative z-10">
+                <div className="flex items-start justify-between mb-4">
+                  <motion.div
+                    whileHover={{ rotate: 360 }}
+                    transition={{ duration: 0.6 }}
+                    className="w-14 h-14 rounded-2xl bg-gradient-to-br from-primary-500/20 to-accent-cyan/20 flex items-center justify-center"
+                  >
+                    <Icon size={28} className="text-accent-cyan" />
+                  </motion.div>
+                  
+                  <div className="text-right">
+                    <div className="text-2xl font-bold text-white">{reason.stat}</div>
+                    <div className="text-xs text-dark-400 uppercase tracking-wider">{reason.statLabel}</div>
+                  </div>
+                </div>
+
+                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-accent-cyan transition-colors">
+                  {reason.title}
+                </h3>
+                <p className="text-dark-400 text-sm leading-relaxed">
+                  {reason.description}
+                </p>
+              </div>
+
+              {/* Corner accent */}
+              <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl from-accent-cyan/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+            </motion.div>
+          );
+        })}
+      </div>
+
+      {/* CTA */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={isInView ? { opacity: 1, y: 0 } : {}}
+        transition={{ delay: 0.7 }}
+        className="text-center mt-12"
+      >
+        <motion.a
+          href="/contact"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-primary-500 to-accent-cyan text-white font-semibold hover:shadow-xl hover:shadow-primary-500/30 transition-all"
+        >
+          <span>Let's Work Together</span>
+          <ChevronRight size={20} />
+        </motion.a>
+      </motion.div>
+    </motion.div>
+  );
+}
+
 export default function ExperienceSection({ experience }: ExperienceSectionProps) {
   return (
     <section id="experience" className="section-padding relative overflow-hidden">
@@ -275,6 +402,9 @@ export default function ExperienceSection({ experience }: ExperienceSectionProps
             />
           ))}
         </div>
+
+        {/* Why Hire Me Section */}
+        <WhyHireMeSection />
       </div>
 
       {/* Background decoration */}
