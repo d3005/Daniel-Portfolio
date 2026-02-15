@@ -9,7 +9,9 @@ import {
   Sparkles,
   Loader2,
   ChevronDown,
-  RotateCcw
+  RotateCcw,
+  FileText,
+  Calendar
 } from 'lucide-react';
 import { sendMessage, resetConversation, QUICK_SUGGESTIONS, type ChatMessage } from '../../lib/gemini';
 
@@ -246,6 +248,49 @@ export default function AIChatbot() {
 
               <div ref={messagesEndRef} />
             </div>
+
+            {/* Quick Action Buttons */}
+            <AnimatePresence>
+              {showSuggestions && messages.length <= 2 && (
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 10 }}
+                  className="px-4 pb-2"
+                >
+                  <div className="flex gap-2 mb-3">
+                    <motion.a
+                      href="https://www.daniel-portfolio.in/Daniel_Joseph_Resume.pdf"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      initial={{ opacity: 0, scale: 0.9 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ delay: 0.1 }}
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                      className="flex-1 flex items-center justify-center gap-2 px-3 py-2 rounded-xl bg-accent-purple/20 text-accent-purple border border-accent-purple/30 hover:bg-accent-purple/30 transition-all text-sm"
+                    >
+                      <FileText size={16} />
+                      <span>View Resume</span>
+                    </motion.a>
+                    <motion.a
+                      href="https://calendar.app.google/F7aLphveqQ7rNZm58"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      initial={{ opacity: 0, scale: 0.9 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ delay: 0.2 }}
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                      className="flex-1 flex items-center justify-center gap-2 px-3 py-2 rounded-xl bg-accent-green/20 text-accent-green border border-accent-green/30 hover:bg-accent-green/30 transition-all text-sm"
+                    >
+                      <Calendar size={16} />
+                      <span>Schedule Call</span>
+                    </motion.a>
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
 
             {/* Quick Suggestions */}
             <AnimatePresence>
