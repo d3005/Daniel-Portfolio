@@ -3,6 +3,7 @@ import { Canvas, useFrame, useThree } from '@react-three/fiber';
 import * as THREE from 'three';
 import { Suspense } from 'react';
 import { usePerformanceConfig, usePageVisibility } from '../../../hooks/usePerformance';
+import { ParticleSwarm, TrailEffect } from '../MagneticEffects';
 
 // ============================================
 // MORPHING BLOB - Positioned on the RIGHT side
@@ -378,6 +379,12 @@ function HomeSceneContent({ isMobile = false }: { isMobile?: boolean }) {
       
       {/* Mouse interactive glow - skip on mobile */}
       {!isMobile && <MouseGlow />}
+      
+      {/* Particle swarm following cursor - skip on mobile */}
+      {!isMobile && <ParticleSwarm count={800} />}
+      
+      {/* Trail effect following cursor - skip on mobile */}
+      {!isMobile && <TrailEffect count={15} />}
     </>
   );
 }
