@@ -1,5 +1,4 @@
 import { Suspense } from 'react';
-import { motion } from 'framer-motion';
 import PageLayout from '../components/layout/PageLayout';
 import SkillsSection from '../components/sections/SkillsSection';
 import usePortfolioData from '../hooks/usePortfolioData';

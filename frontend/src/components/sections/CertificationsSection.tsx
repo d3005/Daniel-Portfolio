@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { Award, ExternalLink, Calendar, CheckCircle } from 'lucide-react';
-import SectionHeader from './SectionHeader';
+import { Award, Calendar, CheckCircle } from 'lucide-react';
+import SectionHeader from '../ui/SectionHeader';
 
 interface Certification {
   id: string;

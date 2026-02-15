@@ -99,7 +99,7 @@ function useGitHubStats(username: string) {
 }
 
 interface StatCardProps {
-  icon: React.ElementType;
+  icon: React.ComponentType<{ size?: number; className?: string }>;
   label: string;
   value: number;
   color: string;

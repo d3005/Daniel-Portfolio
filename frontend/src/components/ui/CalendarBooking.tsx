@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Calendar, Clock, ExternalLink } from 'lucide-react';
 
@@ -9,8 +8,6 @@ interface CalendarBookingProps {
 export default function CalendarBooking({ 
   calendarUrl = 'https://calendar.app.google/F7aLphveqQ7rNZm58'
 }: CalendarBookingProps) {
-  const [isHovered, setIsHovered] = useState(false);
-
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}

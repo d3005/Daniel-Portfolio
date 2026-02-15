@@ -354,13 +354,13 @@ export default function ProjectsSection({ projects }: ProjectsSectionProps) {
   
   // Extract all unique technologies from projects
   const allTechnologies = Array.from(
-    new Set(projects.flatMap(project => project.technologies))
+    new Set(projects.flatMap(project => project.tags))
   ).sort();
   
   // Filter projects based on selected technology
   const filteredProjects = selectedTech === 'All' 
     ? projects 
-    : projects.filter(project => project.technologies.includes(selectedTech));
+    : projects.filter(project => project.tags.includes(selectedTech));
 
   return (
     <section id="projects" className="section-padding relative overflow-hidden">

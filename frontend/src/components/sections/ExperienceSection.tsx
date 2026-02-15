@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { MapPin, Calendar, Briefcase, GraduationCap, ChevronRight, Award, Rocket, Lightbulb, TrendingUp, Target, Zap, Users, Flag, Star, Crown, Trophy, Sparkles } from 'lucide-react';
+import { MapPin, Calendar, Briefcase, GraduationCap, ChevronRight, Award, Rocket, Lightbulb, Target, Zap, Users, Flag, Star, Crown, Trophy, Sparkles } from 'lucide-react';
 import SectionHeader from '../ui/SectionHeader';
 import type { Experience } from '../../types/portfolio';
 

@@ -1,10 +1,5 @@
 import { motion } from 'framer-motion';
 
-interface SkeletonProps {
-  className?: string;
-  count?: number;
-}
-
 export function SkeletonCard({ className = '' }: { className?: string }) {
   return (
     <div className={`animate-pulse bg-dark-800/50 rounded-xl ${className}`}>

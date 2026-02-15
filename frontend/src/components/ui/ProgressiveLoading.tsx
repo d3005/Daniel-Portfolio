@@ -1,7 +1,7 @@
-import { useState, useEffect, useRef, ImgHTMLAttributes } from 'react';
-import { motion } from 'framer-motion';
+import { useState, useEffect, useRef, type ImgHTMLAttributes } from 'react';
+import { motion, type HTMLMotionProps } from 'framer-motion';
 
-interface ProgressiveImageProps extends ImgHTMLAttributes<HTMLImageElement> {
+interface ProgressiveImageProps extends HTMLMotionProps<'img'> {
   src: string;
   alt: string;
   placeholderSrc?: string;
