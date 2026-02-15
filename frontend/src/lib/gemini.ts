@@ -51,149 +51,35 @@ const KNOWLEDGE_BASE: KnowledgeChunk[] = [
     id: 'hiring-availability',
     category: 'hiring',
     title: 'Availability for Hiring',
-    content: `Daniel Joseph Kommu is actively seeking opportunities in:
-    - GenAI/LLM Engineering roles
-    - Machine Learning Engineer positions
-    - Data Scientist roles
-    - AI/ML Internships (immediate availability)
-    - Full-time positions (graduating 2026)
-    - Freelance/consulting projects
-    
-    He is available for:
-    - Immediate internships (remote or hybrid)
-    - Full-time roles starting 2026
-    - Contract/freelance work
-    - Open to relocation for the right opportunity
-    
-    Response time: Usually within 24 hours
-    Preferred contact: Email or LinkedIn`,
+    content: `Yes, Daniel is actively looking for opportunities! He's especially interested in GenAI and ML Engineering roles. He can start internships immediately and will be available for full-time positions when he graduates in 2026. He's also open to freelance work. He usually responds to emails within 24 hours, so feel free to reach out!`,
     keywords: ['available', 'hiring', 'hire', 'job', 'opportunity', 'work', 'position', 'employment', 'internship', 'full-time', 'contract', 'recruiting', 'recruiter']
   },
   {
     id: 'hiring-technologies',
     category: 'hiring',
     title: 'Key Technologies Daniel Specializes In',
-    content: `Daniel's core technical specializations for hiring managers:
-    
-    GENAI & LLMs (Primary Focus):
-    - Large Language Models: GPT, Gemini, Claude integration
-    - RAG Pipelines: Vector databases, embeddings, retrieval systems
-    - Prompt Engineering: Chain-of-thought, few-shot learning
-    - Fine-tuning: LoRA, QLoRA, parameter-efficient methods
-    
-    MACHINE LEARNING:
-    - Deep Learning: TensorFlow, PyTorch, Keras
-    - NLP: Text classification, NER, sentiment analysis
-    - Classical ML: Scikit-learn, XGBoost, Random Forest
-    
-    PRODUCTION & DEPLOYMENT:
-    - APIs: Flask, FastAPI, RESTful services
-    - Cloud: AWS (EC2, S3, SageMaker)
-    - Containerization: Docker
-    - Monitoring: Datadog APM, logging
-    
-    DATA ENGINEERING:
-    - Python, SQL, Pandas, NumPy
-    - Data preprocessing, feature engineering
-    - Model optimization and performance tuning`,
+    content: `Daniel's main focus is on GenAI and LLMs - he loves working with large language models and building RAG systems. He's really good with TensorFlow and PyTorch for deep learning, and he's built production APIs using Flask. For deployment, he knows AWS and Docker. His primary language is Python, which he uses for everything from data preprocessing to model training.`,
     keywords: ['technologies', 'tech stack', 'specialize', 'skills', 'expertise', 'tech', 'stack', 'tools', 'frameworks', 'languages', 'python', 'tensorflow', 'pytorch']
   },
   {
     id: 'hiring-hardest-project',
     category: 'hiring',
     title: 'Most Challenging Project',
-    content: `Daniel's most technically challenging project was the "E-commerce Hybrid Recommendation Engine":
-    
-    CHALLENGES FACED:
-    - Cold start problem: New users with no interaction history
-    - Scalability: Serving recommendations to 10K+ users in real-time
-    - Hybrid approach complexity: Combining collaborative + content-based filtering
-    - Data sparsity: User-item interaction matrix was 98% sparse
-    
-    TECHNICAL SOLUTIONS:
-    - Implemented matrix factorization (SVD) for collaborative filtering
-    - Used item embeddings for content-based similarity
-    - Built Flask API with caching (Redis) for sub-100ms response times
-    - Hybrid scoring: Weighted combination of multiple algorithms
-    
-    RESULTS ACHIEVED:
-    - 28% improvement in Click-Through Rate
-    - 15% reduction in recommendation latency
-    - Successfully handled 10K+ concurrent users
-    - Reduced cold-start impact by 40%
-    
-    This project showcases Daniel's ability to solve complex ML engineering problems and deliver production-ready systems.`,
+    content: `The toughest project Daniel worked on was his E-commerce Recommendation Engine. The main challenge was dealing with the cold start problem - new users with no purchase history. Plus the data was super sparse (98% empty!) and he had to serve recommendations to 10K users in real-time. He solved it by combining collaborative filtering with content-based approaches using matrix factorization and embeddings. The result? 28% improvement in click-through rates and response times under 100ms. Pretty impressive problem-solving!`,
     keywords: ['hardest', 'challenging', 'difficult', 'complex', 'project', 'challenge', 'problem', 'solve', 'technical', 'difficulty', 'ecommerce', 'recommendation']
   },
   {
     id: 'hiring-github',
     category: 'hiring',
     title: 'GitHub Portfolio and Code Quality',
-    content: `Daniel's GitHub showcases production-ready code:
-    
-    GITHUB: https://github.com/d3005
-    
-    REPOSITORY HIGHLIGHTS:
-    - Clean, documented code with README files
-    - Proper project structure and organization
-    - Type safety with TypeScript
-    - Version control best practices
-    - CI/CD pipelines for automated testing
-    
-    CODE QUALITY INDICATORS:
-    - Consistent coding style
-    - Comprehensive comments
-    - Unit tests for critical functions
-    - API documentation
-    - Docker containerization
-    
-    ACTIVE PROJECTS:
-    - This portfolio (React + Three.js + Node.js)
-    - 5+ ML/Data Science projects
-    - Regular commits and updates
-    
-    Review his code directly: All repositories are public and well-documented.`,
+    content: `You can check out Daniel's work on GitHub at github.com/d3005. His code is clean and well-documented - he writes good READMEs, uses TypeScript for type safety, and follows proper project structure. He has this portfolio (built with React and Three.js) plus 5 other ML projects. All his repos are public, so you can review his code style directly.`,
     keywords: ['github', 'code', 'repository', 'repo', 'portfolio', 'projects', 'code quality', 'source code', 'see code', 'review']
   },
   {
     id: 'hiring-why-hire',
     category: 'hiring',
     title: 'Why Hire Daniel',
-    content: `Key reasons to hire Daniel Joseph Kommu:
-    
-    1. PRODUCTION EXPERIENCE (Not just academic):
-    - Built real-world GenAI systems at QWATCH
-    - Optimized fraud detection handling 100K+ transactions
-    - Deployed APIs serving 500+ requests/hour
-    - Reduced ML pipeline latency by 30%
-    
-    2. RAPID LEARNER:
-    - Self-taught advanced GenAI/LLM concepts
-    - Quickly adapts to new frameworks and tools
-    - Stays current with latest AI research
-    
-    3. FULL-STACK CAPABILITY:
-    - Frontend: React, Three.js, modern UI/UX
-    - Backend: Node.js, Express, API design
-    - ML/AI: TensorFlow, PyTorch, LLMs
-    - DevOps: Docker, AWS, monitoring
-    
-    4. RESULTS-ORIENTED:
-    - 95% accuracy in fraud detection
-    - 28% CTR improvement
-    - 30% latency reduction
-    - Delivers measurable business impact
-    
-    5. IMMEDIATE CONTRIBUTOR:
-    - Can start immediately on internships
-    - Requires minimal onboarding
-    - Self-motivated and proactive
-    
-    IDEAL ROLES:
-    - GenAI/LLM Engineer (Primary)
-    - ML Engineer
-    - Data Scientist
-    - Full-Stack AI Developer`,
+    content: `Great question! Daniel brings real production experience - he's not just theory, he's built actual GenAI systems at QWATCH and optimized fraud detection handling 100K+ transactions. He's a quick learner who taught himself advanced LLM concepts and stays current with AI research. Plus he's full-stack capable - frontend with React, backend with Node.js, and ML with TensorFlow/PyTorch. Most importantly, he delivers results - like 95% fraud detection accuracy and 28% CTR improvement. He can contribute immediately with minimal onboarding.`,
     keywords: ['why hire', 'why', 'reason', 'hire', 'strength', 'value', 'benefit', 'good fit', 'qualification', 'stand out', 'best']
   },
 
@@ -820,44 +706,44 @@ function getFallbackResponse(message: string): string {
   
   // Greeting responses
   if (lowerMessage.match(/^(hi|hello|hey|greetings|howdy)/)) {
-    return "Hi there! 👋 I'm June, Daniel's AI assistant! I can tell you about Daniel's skills in GenAI & Machine Learning, his projects, work experience, and how to contact him. What would you like to know?";
+    return "Hi there! I'm June, Daniel's AI assistant. I know all about his work in GenAI and Machine Learning, the projects he's built, and his experiences. Feel free to ask me anything!";
   }
   
   // Use retrieved chunks for relevant responses
   if (chunks.length > 0) {
     const primaryChunk = chunks[0];
     
-    // Build response based on chunk category
+    // Build response based on chunk category - natural conversational style
     switch (primaryChunk.category) {
       case 'personal':
       case 'summary':
-        return "Daniel Joseph Kommu is a passionate GenAI & Machine Learning Engineer! 🧠 He's currently pursuing B.Tech in Computer Science with Data Science specialization (2022-2026). He has hands-on experience building scalable AI systems, NLP pipelines, RAG architectures, and Generative AI solutions. He's completed 3 professional internships and has 5+ real-world ML/AI projects. Would you like to know about his skills or projects?";
+        return "Oh, Daniel's awesome! He's a GenAI & ML Engineer currently finishing up his B.Tech in Computer Science. He's super passionate about building AI systems and has already completed 3 internships working on real-world projects. Want me to tell you about what he's built?";
       
       case 'contact':
-        return "Great! Daniel would love to connect! 📧\n\n📧 dannyjoseph3007@outlook.com\n💼 linkedin.com/in/daniel-joseph-kommu\n💻 github.com/d3005\n\nHe's available for internships, freelance projects, or full-time opportunities. Head to the Contact page to send him a message!";
+        return "Awesome! Daniel's always excited to connect with new people. You can reach him at dannyjoseph3007@outlook.com or check out his LinkedIn and GitHub. He's currently looking for internships and full-time roles, so definitely reach out!";
       
       case 'skills':
-        return "Daniel has impressive technical skills! 💻\n\n• **GenAI & LLMs**: Prompt Engineering, RAG Pipelines, Model Evaluation\n• **ML/AI**: NLP, CNNs, Recommender Systems, Computer Vision\n• **Frameworks**: TensorFlow, PyTorch, Keras, Scikit-learn\n• **Languages**: Python, Java, C, SQL\n• **Cloud & Deployment**: AWS, Docker, Flask, REST APIs\n\nWant to see his projects that showcase these skills?";
+        return "Daniel's got a solid skill set! He's really into GenAI and LLMs - he loves working with RAG pipelines and prompt engineering. He's also strong with TensorFlow and PyTorch for ML, and he's built production APIs with Flask. Python is his main language. What kind of skills are you looking for?";
       
       case 'experience':
-        return "Daniel has completed 3 professional internships! 💼\n\n1. **GenAI Engineer Intern** @ QWATCH (Jan-Mar 2025) - Built LLM-based security products\n2. **Data Science Intern** @ Coding Raja Technologies (Jul-Aug 2024) - 95% accuracy fraud detection\n3. **ML Intern** @ Next24Tech (May-Jun 2024) - NLP classification for 50K+ documents\n\nCheck out the Experience page for more details!";
+        return "Daniel's got some solid experience under his belt! His most recent was at QWATCH as a GenAI Engineer where he worked on LLM-based security products. Before that, he interned at Coding Raja and Next24Tech working on fraud detection and NLP systems. Each one gave him hands-on production experience.";
       
       case 'projects':
-        return "Daniel has built some amazing projects! 🚀\n\n1. **E-commerce Recommendation Engine** - Hybrid recommender with 28% CTR improvement\n2. **Tweet Sentiment Analysis** - NLP pipeline with 85% F1-score\n3. **GrainPalette** - Rice classification AI using MobileNetV2\n4. **CrimeWaveML** - Crime prediction platform with 48-hr forecasting\n\nYou can explore them in detail on the Projects page!";
+        return "Oh man, his projects are really cool! My favorite is probably the E-commerce Recommendation Engine - he built a hybrid system that improved click-through rates by 28%. He also did this Crime Prediction platform and a Rice Classification AI. Each one shows different strengths. Which type of project interests you most?";
       
       case 'education':
-        return "Daniel is pursuing his B.Tech in Computer Science (Data Science) at Rise Krishna Sai Prakasam Group of Institutions, Ongole (2022-2026) with a CGPA of 7.8. 🎓 He also scored a perfect 10.0 CGPA in his 10th grade!";
+        return "Daniel's studying Computer Science with Data Science at Rise Krishna Sai Prakasam Group of Institutions. He's in his final years now (graduating 2026) and has maintained a good CGPA of 7.8. He's been balancing academics with all these internships and projects!";
       
       case 'certifications':
-        return "Daniel has earned several industry certifications! 📜\n\n• GenAI Engineer Internship - QWATCH (2025)\n• AWS Academy Graduate - EduSkills (2024)\n• Deep Learning Specialization - SmartInternz (2024)\n• ML Internship Certificate - Next24Tech (2024)\n• Data Science Internship - Prodigy InfoTech (2024)";
+        return "Daniel's collected quite a few certifications along the way! He's certified in GenAI Engineering from QWATCH, AWS from EduSkills, and Deep Learning from SmartInternz. Plus his internship certificates. He really believes in continuous learning.",
       
       case 'achievements':
-        return "Daniel has impressive achievements! 🏆\n\n• 95% accuracy in fraud detection\n• 28% CTR improvement in recommendations\n• 30% latency reduction in ML pipelines\n• Processed 100K+ transactions\n• 3 internships, 5+ projects, 5 certifications\n\nHe brings measurable impact to every project!";
+        return "Daniel's got some solid achievements! He hit 95% accuracy on fraud detection, improved recommendation CTR by 28%, and cut ML pipeline latency by 30%. He's also processed over 100K transactions and completed 3 internships while working on 5+ projects. He really delivers measurable results.",
     }
   }
   
   // Default response
-  return "I'm June, Daniel's AI assistant! 👋 I can help you learn about:\n\n• Daniel's background and skills\n• His ML/AI projects\n• Work experience and internships\n• Education and certifications\n• How to contact him\n\nWhat would you like to know?";
+  return "Hey there! I'm June, Daniel's AI assistant. I can chat with you about pretty much anything regarding Daniel - his background in GenAI and ML, the projects he's built, his internship experiences, or how to get in touch with him. What are you curious about?";
 }
 
 // ============================================
