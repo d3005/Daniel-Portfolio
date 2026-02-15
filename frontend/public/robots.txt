@@ -1,0 +1,26 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://www.daniel-portfolio.in/sitemap.xml
+
+# Crawl rate (optional)
+Crawl-delay: 10
+
+# Disallow admin and private areas
+Disallow: /admin
+Disallow: /admin/*
+Disallow: /api/*
+Disallow: /private/*
+
+# Block specific bots (optional)
+User-agent: BadBot
+Disallow: /
+
+# Allow Googlebot full access
+User-agent: Googlebot
+Allow: /
+
+# Allow Bingbot full access  
+User-agent: Bingbot
+Allow: /

@@ -5,6 +5,9 @@ import { AnimatePresence, motion } from 'framer-motion';
 // Pages
 import HomePage from './pages/HomePage';
 
+// SEO & Structured Data
+import { PersonSchema, WebsiteSchema } from './components/StructuredData';
+
 // Lazy loaded pages (for better performance)
 const SkillsPage = lazy(() => import('./pages/SkillsPage'));
 const ExperiencePage = lazy(() => import('./pages/ExperiencePage'));
@@ -133,6 +136,10 @@ function App() {
   return (
     <AdminAuthProvider>
       <Router>
+        {/* SEO: Structured Data for better indexing */}
+        <PersonSchema />
+        <WebsiteSchema />
+        
         {/* Custom Cursor - Global, appears on all pages */}
         <Suspense fallback={null}>
           <CustomCursor />
