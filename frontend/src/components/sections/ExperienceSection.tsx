@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { MapPin, Calendar, Briefcase, GraduationCap, ChevronRight, Award, Rocket, Lightbulb, TrendingUp, Target, Zap, Users } from 'lucide-react';
+import { MapPin, Calendar, Briefcase, GraduationCap, ChevronRight, Award, Rocket, Lightbulb, TrendingUp, Target, Zap, Users, Flag, Star, Crown, Trophy, Sparkles } from 'lucide-react';
 import SectionHeader from '../ui/SectionHeader';
 import type { Experience } from '../../types/portfolio';
 
@@ -253,6 +253,230 @@ interface ExperienceSectionProps {
   experience: Experience[];
 }
 
+// Career Milestones Timeline Component
+function CareerTimeline() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+
+  const milestones = [
+    {
+      year: "2020",
+      title: "SSC - Perfect Score",
+      description: "Achieved 10.0 CGPA in 10th grade from Narayana E-Techno School, Vijayawada",
+      icon: Star,
+      type: "education",
+      highlight: "Perfect 10.0 CGPA"
+    },
+    {
+      year: "2022",
+      title: "Started B.Tech Journey",
+      description: "Began Computer Science with Data Science at Rise Krishna Sai Prakasam Group of Institutions",
+      icon: GraduationCap,
+      type: "education",
+      highlight: "Data Science Specialization"
+    },
+    {
+      year: "2024",
+      title: "First ML Internship",
+      description: "Joined Next24Tech as Machine Learning Intern, built NLP systems processing 50K+ documents",
+      icon: Rocket,
+      type: "milestone",
+      highlight: "88% Accuracy Achieved"
+    },
+    {
+      year: "2024",
+      title: "Data Science Excellence",
+      description: "At Coding Raja, optimized fraud detection to 95% accuracy on 100K+ transactions",
+      icon: Trophy,
+      type: "achievement",
+      highlight: "95% Fraud Detection"
+    },
+    {
+      year: "2025",
+      title: "GenAI Engineering",
+      description: "Joined QWATCH as GenAI Engineer Intern, working with LLMs and RAG systems",
+      icon: Crown,
+      type: "milestone",
+      highlight: "GenAI Focus"
+    },
+    {
+      year: "2025",
+      title: "Portfolio Launch",
+      description: "Launched interactive 3D portfolio featuring AI chatbot 'June' built with React & Three.js",
+      icon: Sparkles,
+      type: "achievement",
+      highlight: "Live at daniel-portfolio.in"
+    },
+    {
+      year: "2026",
+      title: "Graduation & Beyond",
+      description: "Expected B.Tech graduation. Actively seeking full-time GenAI/ML opportunities",
+      icon: Flag,
+      type: "future",
+      highlight: "Open to Opportunities"
+    }
+  ];
+
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 50 }}
+      animate={isInView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.8 }}
+      className="mt-20 pt-16 border-t border-primary-500/20"
+    >
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={isInView ? { opacity: 1, y: 0 } : {}}
+        transition={{ delay: 0.2 }}
+        className="text-center mb-12"
+      >
+        <h2 className="heading-2 mb-4">
+          <span className="gradient-text">Career Timeline</span>
+        </h2>
+        <p className="text-dark-400 text-lg max-w-2xl mx-auto">
+          Key milestones in my journey from a curious student to an AI Engineer
+        </p>
+      </motion.div>
+
+      {/* Horizontal Timeline */}
+      <div className="relative">
+        {/* Timeline Line */}
+        <div className="hidden md:block absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-primary-500/20 via-accent-cyan/40 to-accent-purple/20 transform -translate-y-1/2" />
+        
+        {/* Milestones Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-7 gap-4">
+          {milestones.map((milestone, index) => {
+            const Icon = milestone.icon;
+            const isFuture = milestone.type === 'future';
+            
+            return (
+              <motion.div
+                key={milestone.title}
+                initial={{ opacity: 0, y: 30 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ delay: 0.3 + index * 0.1 }}
+                className="relative group"
+              >
+                {/* Timeline Dot - Desktop */}
+                <div className="hidden md:flex absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
+                  <motion.div
+                    whileHover={{ scale: 1.2 }}
+                    className={`w-4 h-4 rounded-full border-2 ${
+                      isFuture 
+                        ? 'border-dark-600 bg-dark-800' 
+                        : 'border-accent-cyan bg-primary-500'
+                    }`}
+                    style={{
+                      boxShadow: isFuture 
+                        ? 'none' 
+                        : '0 0 15px rgba(0, 245, 255, 0.6)'
+                    }}
+                  />
+                </div>
+
+                {/* Card */}
+                <motion.div
+                  whileHover={{ y: -5, scale: 1.02 }}
+                  className={`glass-card p-4 mt-6 md:mt-8 relative overflow-hidden ${
+                    isFuture ? 'opacity-70' : ''
+                  }`}
+                >
+                  {/* Type indicator */}
+                  <div className={`absolute top-0 left-0 right-0 h-1 ${
+                    milestone.type === 'achievement' 
+                      ? 'bg-gradient-to-r from-accent-green to-accent-cyan'
+                      : milestone.type === 'milestone'
+                      ? 'bg-gradient-to-r from-primary-500 to-accent-purple'
+                      : milestone.type === 'future'
+                      ? 'bg-dark-600'
+                      : 'bg-gradient-to-r from-accent-orange to-accent-pink'
+                  }`} />
+
+                  {/* Year Badge */}
+                  <div className="flex items-center justify-between mb-3">
+                    <span className={`text-sm font-bold ${
+                      isFuture ? 'text-dark-500' : 'text-accent-cyan'
+                    }`}>
+                      {milestone.year}
+                    </span>
+                    <motion.div
+                      whileHover={{ rotate: 360 }}
+                      transition={{ duration: 0.6 }}
+                      className={`w-8 h-8 rounded-lg flex items-center justify-center ${
+                        milestone.type === 'achievement'
+                          ? 'bg-accent-green/20 text-accent-green'
+                          : milestone.type === 'milestone'
+                          ? 'bg-primary-500/20 text-primary-400'
+                          : milestone.type === 'future'
+                          ? 'bg-dark-700 text-dark-500'
+                          : 'bg-accent-orange/20 text-accent-orange'
+                      }`}
+                    >
+                      <Icon size={16} />
+                    </motion.div>
+                  </div>
+
+                  {/* Content */}
+                  <h3 className={`text-sm font-bold mb-2 ${
+                    isFuture ? 'text-dark-400' : 'text-white'
+                  }`}>
+                    {milestone.title}
+                  </h3>
+                  <p className="text-xs text-dark-400 mb-3 line-clamp-3">
+                    {milestone.description}
+                  </p>
+
+                  {/* Highlight Badge */}
+                  <div className={`inline-flex items-center gap-1 px-2 py-1 rounded-full text-[10px] font-semibold ${
+                    milestone.type === 'achievement'
+                      ? 'bg-accent-green/15 text-accent-green'
+                      : milestone.type === 'milestone'
+                      ? 'bg-primary-500/15 text-primary-400'
+                      : milestone.type === 'future'
+                      ? 'bg-dark-700 text-dark-500'
+                      : 'bg-accent-orange/15 text-accent-orange'
+                  }`}>
+                    <Sparkles size={10} />
+                    {milestone.highlight}
+                  </div>
+                </motion.div>
+              </motion.div>
+            );
+          })}
+        </div>
+      </div>
+
+      {/* Stats Summary */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={isInView ? { opacity: 1, y: 0 } : {}}
+        transition={{ delay: 0.8 }}
+        className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12"
+      >
+        {[
+          { label: "Years of Study", value: "4", subtext: "B.Tech CSE-DS" },
+          { label: "Internships", value: "3", subtext: "Industry Experience" },
+          { label: "Projects Built", value: "5+", subtext: "Production Ready" },
+          { label: "Certifications", value: "5", subtext: "Industry Recognized" }
+        ].map((stat, index) => (
+          <motion.div
+            key={stat.label}
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={isInView ? { opacity: 1, scale: 1 } : {}}
+            transition={{ delay: 0.9 + index * 0.1 }}
+            className="glass-card p-4 text-center"
+          >
+            <div className="text-3xl font-bold text-accent-cyan mb-1">{stat.value}</div>
+            <div className="text-sm font-medium text-white mb-1">{stat.label}</div>
+            <div className="text-xs text-dark-400">{stat.subtext}</div>
+          </motion.div>
+        ))}
+      </motion.div>
+    </motion.div>
+  );
+}
+
 // Why Hire Me Section Component
 function WhyHireMeSection() {
   const ref = useRef(null);
@@ -402,6 +626,9 @@ export default function ExperienceSection({ experience }: ExperienceSectionProps
             />
           ))}
         </div>
+
+        {/* Career Timeline */}
+        <CareerTimeline />
 
         {/* Why Hire Me Section */}
         <WhyHireMeSection />
