@@ -834,7 +834,7 @@ function getFallbackResponse(message: string): string {
         return "Daniel Joseph Kommu is a passionate GenAI & Machine Learning Engineer! 🧠 He's currently pursuing B.Tech in Computer Science with Data Science specialization (2022-2026). He has hands-on experience building scalable AI systems, NLP pipelines, RAG architectures, and Generative AI solutions. He's completed 3 professional internships and has 5+ real-world ML/AI projects. Would you like to know about his skills or projects?";
       
       case 'contact':
-        return "Great! Daniel would love to connect! 📧\n\n• **Email**: dannyjoseph3007@outlook.com\n• **LinkedIn**: linkedin.com/in/daniel-joseph-kommu\n• **GitHub**: github.com/d3005\n\nHe's available for internships, freelance projects, or full-time opportunities. Head to the Contact page to send him a message!";
+        return "Great! Daniel would love to connect! 📧\n\n📧 dannyjoseph3007@outlook.com\n💼 linkedin.com/in/daniel-joseph-kommu\n💻 github.com/d3005\n\nHe's available for internships, freelance projects, or full-time opportunities. Head to the Contact page to send him a message!";
       
       case 'skills':
         return "Daniel has impressive technical skills! 💻\n\n• **GenAI & LLMs**: Prompt Engineering, RAG Pipelines, Model Evaluation\n• **ML/AI**: NLP, CNNs, Recommender Systems, Computer Vision\n• **Frameworks**: TensorFlow, PyTorch, Keras, Scikit-learn\n• **Languages**: Python, Java, C, SQL\n• **Cloud & Deployment**: AWS, Docker, Flask, REST APIs\n\nWant to see his projects that showcase these skills?";
