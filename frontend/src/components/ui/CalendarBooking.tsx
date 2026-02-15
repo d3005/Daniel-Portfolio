@@ -7,7 +7,7 @@ interface CalendarBookingProps {
 }
 
 export default function CalendarBooking({ 
-  calendarUrl = 'https://calendar.app.google/example' 
+  calendarUrl = 'https://calendar.app.google/F7aLphveqQ7rNZm58'
 }: CalendarBookingProps) {
   const [isHovered, setIsHovered] = useState(false);
 
