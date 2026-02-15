@@ -2,6 +2,7 @@ import { Suspense, lazy } from 'react';
 import { motion } from 'framer-motion';
 import PageLayout from '../components/layout/PageLayout';
 import EducationSection from '../components/sections/EducationSection';
+import CertificationsSection from '../components/sections/CertificationsSection';
 import usePortfolioData from '../hooks/usePortfolioData';
 
 // Lazy load the 3D scene
@@ -34,6 +35,7 @@ export default function EducationPage() {
             education={data.education} 
             certifications={data.certifications} 
           />
+          <CertificationsSection />
         </Suspense>
       </div>
     </PageLayout>

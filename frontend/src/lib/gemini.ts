@@ -754,6 +754,7 @@ export interface ChatMessage {
   role: 'user' | 'assistant';
   content: string;
   timestamp: number;
+  feedback?: 'positive' | 'negative' | null;
 }
 
 export const QUICK_SUGGESTIONS = [

@@ -11,7 +11,9 @@ import {
   ChevronDown,
   RotateCcw,
   FileText,
-  Calendar
+  Calendar,
+  ThumbsUp,
+  ThumbsDown
 } from 'lucide-react';
 import { sendMessage, resetConversation, QUICK_SUGGESTIONS, type ChatMessage } from '../../lib/gemini';
 
@@ -22,6 +24,7 @@ export default function AIChatbot() {
       role: 'assistant',
       content: "Hi! I'm June, Daniel's AI hiring assistant. 👋\n\nLooking to hire a GenAI/ML Engineer? I can help you evaluate Daniel's fit for your team. Ask me about his technical skills, project experience, availability, or anything else you'd like to know!",
       timestamp: Date.now(),
+      feedback: null,
     },
   ]);
   const [inputValue, setInputValue] = useState('');
@@ -98,9 +101,29 @@ export default function AIChatbot() {
         role: 'assistant',
         content: "Hey there! I'm June, Daniel's AI assistant! 👋 Ask me anything about his skills, projects, or experience - I'm here to help!",
         timestamp: Date.now(),
+        feedback: null,
       },
     ]);
     setShowSuggestions(true);
+  };
+
+  // Handle message feedback (thumbs up/down)
+  const handleFeedback = (messageIndex: number, feedback: 'positive' | 'negative') => {
+    setMessages(prev => prev.map((msg, idx) => 
+      idx === messageIndex ? { ...msg, feedback } : msg
+    ));
+    
+    // Store feedback in localStorage for analytics
+    const feedbackData = {
+      messageIndex,
+      feedback,
+      messageContent: messages[messageIndex].content.substring(0, 100), // First 100 chars
+      timestamp: Date.now(),
+    };
+    
+    const existingFeedback = JSON.parse(localStorage.getItem('june_feedback') || '[]');
+    existingFeedback.push(feedbackData);
+    localStorage.setItem('june_feedback', JSON.stringify(existingFeedback));
   };
 
   return (
@@ -216,13 +239,55 @@ export default function AIChatbot() {
                     {msg.role === 'assistant' ? <Bot size={16} /> : <User size={16} />}
                   </div>
                   
-                  {/* Message Bubble */}
-                  <div className={`max-w-[80%] rounded-2xl px-4 py-2.5 ${
-                    msg.role === 'assistant'
-                      ? 'bg-dark-800 text-dark-200 rounded-tl-md'
-                      : 'bg-gradient-to-r from-primary-500 to-accent-cyan text-white rounded-tr-md'
-                  }`}>
-                    <p className="text-sm whitespace-pre-wrap leading-relaxed">{msg.content}</p>
+                  {/* Message Bubble with Feedback */}
+                  <div className={`max-w-[80%] ${msg.role === 'assistant' ? 'flex flex-col' : ''}`}>
+                    <div className={`rounded-2xl px-4 py-2.5 ${
+                      msg.role === 'assistant'
+                        ? 'bg-dark-800 text-dark-200 rounded-tl-md'
+                        : 'bg-gradient-to-r from-primary-500 to-accent-cyan text-white rounded-tr-md'
+                    }`}>
+                      <p className="text-sm whitespace-pre-wrap leading-relaxed">{msg.content}</p>
+                    </div>
+                    
+                    {/* Feedback Buttons for Assistant Messages */}
+                    {msg.role === 'assistant' && (
+                      <div className="flex items-center gap-1 mt-1 ml-1">
+                        {msg.feedback === null || msg.feedback === undefined ? (
+                          <>
+                            <motion.button
+                              whileHover={{ scale: 1.1 }}
+                              whileTap={{ scale: 0.95 }}
+                              onClick={() => handleFeedback(index, 'positive')}
+                              className="p-1 rounded-md text-dark-500 hover:text-accent-green hover:bg-accent-green/10 transition-colors"
+                              title="Helpful response"
+                            >
+                              <ThumbsUp size={14} />
+                            </motion.button>
+                            <motion.button
+                              whileHover={{ scale: 1.1 }}
+                              whileTap={{ scale: 0.95 }}
+                              onClick={() => handleFeedback(index, 'negative')}
+                              className="p-1 rounded-md text-dark-500 hover:text-accent-red hover:bg-accent-red/10 transition-colors"
+                              title="Not helpful"
+                            >
+                              <ThumbsDown size={14} />
+                            </motion.button>
+                          </>
+                        ) : (
+                          <motion.span
+                            initial={{ opacity: 0, scale: 0.8 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            className={`text-xs px-2 py-0.5 rounded-full ${
+                              msg.feedback === 'positive'
+                                ? 'bg-accent-green/20 text-accent-green'
+                                : 'bg-accent-red/20 text-accent-red'
+                            }`}
+                          >
+                            {msg.feedback === 'positive' ? '✓ Helpful' : '✓ Feedback received'}
+                          </motion.span>
+                        )}
+                      </div>
+                    )}
                   </div>
                 </motion.div>
               ))}
