@@ -10,12 +10,8 @@ export const LazyProjectsScene = lazy(() => import('../3d/scenes/ProjectsScene')
 export const LazyEducationScene = lazy(() => import('../3d/scenes/EducationScene'));
 export const LazyContactScene = lazy(() => import('../3d/scenes/ContactScene'));
 
-// Lazy load 3D effects
-export const LazyHeroEffects = lazy(() => import('../3d/effects/HeroEffects'));
-export const LazyBackgroundEffects = lazy(() => import('../3d/effects/BackgroundEffects'));
-export const LazySkillsEffects = lazy(() => import('../3d/effects/SkillsEffects'));
-export const LazyProjectsEffects = lazy(() => import('../3d/effects/ProjectsEffects'));
-export const LazyContactEffects = lazy(() => import('../3d/effects/ContactEffects'));
+// Note: 3D effects are imported directly instead of lazy loaded to avoid type issues
+// These are lightweight effect components that don't benefit significantly from lazy loading
 
 interface Lazy3DSceneWrapperProps {
   component: ComponentType<any>;
