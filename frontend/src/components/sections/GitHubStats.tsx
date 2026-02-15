@@ -35,10 +35,17 @@ function useGitHubStats(username: string) {
   const [stats, setStats] = useState<GitHubStats | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const hasFetched = useRef(false);
 
   useEffect(() => {
+    if (hasFetched.current) return;
+    hasFetched.current = true;
+
     const fetchGitHubStats = async () => {
       try {
+        // Add a small delay to not block initial page load
+        await new Promise(resolve => setTimeout(resolve, 500));
+        
         setLoading(true);
         
         // Fetch user data
