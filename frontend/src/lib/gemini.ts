@@ -46,6 +46,157 @@ const KNOWLEDGE_BASE: KnowledgeChunk[] = [
     keywords: ['summary', 'profile', 'overview', 'passionate', 'experience', 'achievement', 'what does', 'specializes']
   },
 
+  // === HIRING & RECRUITER INFO ===
+  {
+    id: 'hiring-availability',
+    category: 'hiring',
+    title: 'Availability for Hiring',
+    content: `Daniel Joseph Kommu is actively seeking opportunities in:
+    - GenAI/LLM Engineering roles
+    - Machine Learning Engineer positions
+    - Data Scientist roles
+    - AI/ML Internships (immediate availability)
+    - Full-time positions (graduating 2026)
+    - Freelance/consulting projects
+    
+    He is available for:
+    - Immediate internships (remote or hybrid)
+    - Full-time roles starting 2026
+    - Contract/freelance work
+    - Open to relocation for the right opportunity
+    
+    Response time: Usually within 24 hours
+    Preferred contact: Email or LinkedIn`,
+    keywords: ['available', 'hiring', 'hire', 'job', 'opportunity', 'work', 'position', 'employment', 'internship', 'full-time', 'contract', 'recruiting', 'recruiter']
+  },
+  {
+    id: 'hiring-technologies',
+    category: 'hiring',
+    title: 'Key Technologies Daniel Specializes In',
+    content: `Daniel's core technical specializations for hiring managers:
+    
+    GENAI & LLMs (Primary Focus):
+    - Large Language Models: GPT, Gemini, Claude integration
+    - RAG Pipelines: Vector databases, embeddings, retrieval systems
+    - Prompt Engineering: Chain-of-thought, few-shot learning
+    - Fine-tuning: LoRA, QLoRA, parameter-efficient methods
+    
+    MACHINE LEARNING:
+    - Deep Learning: TensorFlow, PyTorch, Keras
+    - NLP: Text classification, NER, sentiment analysis
+    - Classical ML: Scikit-learn, XGBoost, Random Forest
+    
+    PRODUCTION & DEPLOYMENT:
+    - APIs: Flask, FastAPI, RESTful services
+    - Cloud: AWS (EC2, S3, SageMaker)
+    - Containerization: Docker
+    - Monitoring: Datadog APM, logging
+    
+    DATA ENGINEERING:
+    - Python, SQL, Pandas, NumPy
+    - Data preprocessing, feature engineering
+    - Model optimization and performance tuning`,
+    keywords: ['technologies', 'tech stack', 'specialize', 'skills', 'expertise', 'tech', 'stack', 'tools', 'frameworks', 'languages', 'python', 'tensorflow', 'pytorch']
+  },
+  {
+    id: 'hiring-hardest-project',
+    category: 'hiring',
+    title: 'Most Challenging Project',
+    content: `Daniel's most technically challenging project was the "E-commerce Hybrid Recommendation Engine":
+    
+    CHALLENGES FACED:
+    - Cold start problem: New users with no interaction history
+    - Scalability: Serving recommendations to 10K+ users in real-time
+    - Hybrid approach complexity: Combining collaborative + content-based filtering
+    - Data sparsity: User-item interaction matrix was 98% sparse
+    
+    TECHNICAL SOLUTIONS:
+    - Implemented matrix factorization (SVD) for collaborative filtering
+    - Used item embeddings for content-based similarity
+    - Built Flask API with caching (Redis) for sub-100ms response times
+    - Hybrid scoring: Weighted combination of multiple algorithms
+    
+    RESULTS ACHIEVED:
+    - 28% improvement in Click-Through Rate
+    - 15% reduction in recommendation latency
+    - Successfully handled 10K+ concurrent users
+    - Reduced cold-start impact by 40%
+    
+    This project showcases Daniel's ability to solve complex ML engineering problems and deliver production-ready systems.`,
+    keywords: ['hardest', 'challenging', 'difficult', 'complex', 'project', 'challenge', 'problem', 'solve', 'technical', 'difficulty', 'ecommerce', 'recommendation']
+  },
+  {
+    id: 'hiring-github',
+    category: 'hiring',
+    title: 'GitHub Portfolio and Code Quality',
+    content: `Daniel's GitHub showcases production-ready code:
+    
+    GITHUB: https://github.com/d3005
+    
+    REPOSITORY HIGHLIGHTS:
+    - Clean, documented code with README files
+    - Proper project structure and organization
+    - Type safety with TypeScript
+    - Version control best practices
+    - CI/CD pipelines for automated testing
+    
+    CODE QUALITY INDICATORS:
+    - Consistent coding style
+    - Comprehensive comments
+    - Unit tests for critical functions
+    - API documentation
+    - Docker containerization
+    
+    ACTIVE PROJECTS:
+    - This portfolio (React + Three.js + Node.js)
+    - 5+ ML/Data Science projects
+    - Regular commits and updates
+    
+    Review his code directly: All repositories are public and well-documented.`,
+    keywords: ['github', 'code', 'repository', 'repo', 'portfolio', 'projects', 'code quality', 'source code', 'see code', 'review']
+  },
+  {
+    id: 'hiring-why-hire',
+    category: 'hiring',
+    title: 'Why Hire Daniel',
+    content: `Key reasons to hire Daniel Joseph Kommu:
+    
+    1. PRODUCTION EXPERIENCE (Not just academic):
+    - Built real-world GenAI systems at QWATCH
+    - Optimized fraud detection handling 100K+ transactions
+    - Deployed APIs serving 500+ requests/hour
+    - Reduced ML pipeline latency by 30%
+    
+    2. RAPID LEARNER:
+    - Self-taught advanced GenAI/LLM concepts
+    - Quickly adapts to new frameworks and tools
+    - Stays current with latest AI research
+    
+    3. FULL-STACK CAPABILITY:
+    - Frontend: React, Three.js, modern UI/UX
+    - Backend: Node.js, Express, API design
+    - ML/AI: TensorFlow, PyTorch, LLMs
+    - DevOps: Docker, AWS, monitoring
+    
+    4. RESULTS-ORIENTED:
+    - 95% accuracy in fraud detection
+    - 28% CTR improvement
+    - 30% latency reduction
+    - Delivers measurable business impact
+    
+    5. IMMEDIATE CONTRIBUTOR:
+    - Can start immediately on internships
+    - Requires minimal onboarding
+    - Self-motivated and proactive
+    
+    IDEAL ROLES:
+    - GenAI/LLM Engineer (Primary)
+    - ML Engineer
+    - Data Scientist
+    - Full-Stack AI Developer`,
+    keywords: ['why hire', 'why', 'reason', 'hire', 'strength', 'value', 'benefit', 'good fit', 'qualification', 'stand out', 'best']
+  },
+
   // === JUNE AI ASSISTANT ===
   {
     id: 'june-identity',
@@ -720,11 +871,12 @@ export interface ChatMessage {
 }
 
 export const QUICK_SUGGESTIONS = [
-  "Who is Daniel?",
-  "What are his skills?",
-  "Tell me about his projects",
-  "Work experience?",
-  "How to contact him?",
+  "What technologies does Daniel specialize in?",
+  "What was his hardest project?",
+  "Is he available for internship?",
+  "What's his experience with GenAI?",
+  "Can I see his GitHub projects?",
+  "Hire or contact Daniel",
 ];
 
 export default { sendMessage, resetConversation, QUICK_SUGGESTIONS };

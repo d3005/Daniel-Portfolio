@@ -18,7 +18,7 @@ export default function AIChatbot() {
   const [messages, setMessages] = useState<ChatMessage[]>([
     {
       role: 'assistant',
-      content: "Hey there! I'm June, Daniel's AI assistant! 👋 Ask me anything about his skills, projects, or experience - I'm here to help!",
+      content: "Hi! I'm June, Daniel's AI hiring assistant. 👋\n\nLooking to hire a GenAI/ML Engineer? I can help you evaluate Daniel's fit for your team. Ask me about his technical skills, project experience, availability, or anything else you'd like to know!",
       timestamp: Date.now(),
     },
   ]);
