@@ -350,6 +350,18 @@ interface ProjectsSectionProps {
 }
 
 export default function ProjectsSection({ projects }: ProjectsSectionProps) {
+  const [selectedTech, setSelectedTech] = useState<string>('All');
+  
+  // Extract all unique technologies from projects
+  const allTechnologies = Array.from(
+    new Set(projects.flatMap(project => project.technologies))
+  ).sort();
+  
+  // Filter projects based on selected technology
+  const filteredProjects = selectedTech === 'All' 
+    ? projects 
+    : projects.filter(project => project.technologies.includes(selectedTech));
+
   return (
     <section id="projects" className="section-padding relative overflow-hidden">
       {/* 3D Background Canvas - Lazy loaded */}
@@ -366,8 +378,59 @@ export default function ProjectsSection({ projects }: ProjectsSectionProps) {
           subtitle="Featured projects showcasing my expertise in AI and Machine Learning"
         />
 
+        {/* Technology Filter */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mb-10"
+        >
+          <div className="flex flex-wrap items-center justify-center gap-2">
+            <span className="text-sm text-dark-400 mr-2">Filter by:</span>
+            <motion.button
+              onClick={() => setSelectedTech('All')}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
+                selectedTech === 'All'
+                  ? 'bg-gradient-to-r from-primary-500 to-accent-cyan text-white shadow-lg shadow-primary-500/25'
+                  : 'bg-dark-800 text-dark-300 border border-dark-700 hover:border-primary-500/50 hover:text-primary-400'
+              }`}
+            >
+              All Projects
+            </motion.button>
+            {allTechnologies.map((tech) => (
+              <motion.button
+                key={tech}
+                onClick={() => setSelectedTech(tech)}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
+                  selectedTech === tech
+                    ? 'bg-gradient-to-r from-primary-500 to-accent-cyan text-white shadow-lg shadow-primary-500/25'
+                    : 'bg-dark-800 text-dark-300 border border-dark-700 hover:border-primary-500/50 hover:text-primary-400'
+                }`}
+              >
+                {techIcons[tech] && <span className="mr-1">{techIcons[tech]}</span>}
+                {tech}
+              </motion.button>
+            ))}
+          </div>
+          
+          {/* Results count */}
+          <motion.p
+            key={selectedTech}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            className="text-center text-sm text-dark-400 mt-4"
+          >
+            Showing {filteredProjects.length} {filteredProjects.length === 1 ? 'project' : 'projects'}
+            {selectedTech !== 'All' && ` in ${selectedTech}`}
+          </motion.p>
+        </motion.div>
+
         <div className="grid md:grid-cols-2 gap-8">
-          {projects.map((project, index) => (
+          {filteredProjects.map((project, index) => (
             <ProjectCard key={project.id} project={project} index={index} />
           ))}
         </div>
