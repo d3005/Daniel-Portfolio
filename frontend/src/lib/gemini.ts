@@ -30,7 +30,7 @@ const KNOWLEDGE_BASE: KnowledgeChunk[] = [
     id: 'personal-resume',
     category: 'personal',
     title: 'Resume / CV',
-    content: `You can view or download Daniel's resume at: https://www.daniel-portfolio.in/Daniel_Resume.pdf. The resume includes his full professional background, education details (B.Tech CSE-DS at Rise Krishna Sai Prakasam Group of Institutions), his 3 internships (GenAI Engineer at QWATCH, Data Science at Coding Raja, ML at Next24Tech), his projects, skills, and certifications. Feel free to ask for the resume if you need it sent directly to your email!`,
+    content: `You can view or download Daniel's resume at: https://www.daniel-portfolio.in/Daniel_Joseph_Resume.pdf. The resume includes his full professional background, education details (B.Tech CSE-DS at Rise Krishna Sai Prakasam Group of Institutions), his 3 internships (GenAI Engineer at QWATCH, Data Science at Coding Raja, ML at Next24Tech), his projects, skills, and certifications. Feel free to ask for the resume if you need it sent directly to your email!`,
     keywords: ['resume', 'cv', 'download', 'document', 'pdf', 'view resume', 'see resume', 'get resume', 'share resume']
   },
   {
@@ -745,7 +745,7 @@ function getFallbackResponse(message: string): string {
         return "Daniel's collected quite a few certifications along the way! He's certified in GenAI Engineering from QWATCH, AWS from EduSkills, and Deep Learning from SmartInternz. Plus his internship certificates. He really believes in continuous learning.";
       
       case 'resume':
-        return "Here's Daniel's resume: https://www.daniel-portfolio.in/Daniel_Resume.pdf\n\nIt includes his full background, education (B.Tech CSE-DS), 3 internships, projects, skills, and certifications. You can also view his LinkedIn profile at https://linkedin.com/in/daniel-joseph-kommu. Want me to email it directly to you?";
+        return "Here's Daniel's resume: https://www.daniel-portfolio.in/Daniel_Joseph_Resume.pdf\n\nIt includes his full background, education (B.Tech CSE-DS), 3 internships, projects, skills, and certifications. You can also view his LinkedIn profile at https://linkedin.com/in/daniel-joseph-kommu. Want me to email it directly to you?";
       
       case 'achievements':
         return "Daniel's got some solid achievements! He hit 95% accuracy on fraud detection, improved recommendation CTR by 28%, and cut ML pipeline latency by 30%. He's also processed over 100K transactions and completed 3 internships while working on 5+ projects. He really delivers measurable results.";

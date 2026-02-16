@@ -14,7 +14,7 @@ const defaultData: PortfolioData = {
     phone: "+91-9390217611",
     location: "Vijayawada, Andhra Pradesh, India",
     image: "/portfolio.jpg",
-    resume: "/Daniel_Resume.pdf",
+    resume: "/Daniel_Joseph_Resume.pdf",
     social: {
       github: "https://github.com/d3005",
       linkedin: "https://linkedin.com/in/daniel-joseph-kommu",
