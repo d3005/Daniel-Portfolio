@@ -325,7 +325,7 @@ export default function AIChatbot() {
                 >
                   <div className="flex gap-2 mb-3">
                     <motion.a
-                      href="https://www.daniel-portfolio.in/Daniel_Joseph_Resume.pdf"
+                      href="https://www.daniel-portfolio.in/Daniel_Resume.pdf"
                       target="_blank"
                       rel="noopener noreferrer"
                       initial={{ opacity: 0, scale: 0.9 }}
