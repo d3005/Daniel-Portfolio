@@ -1,5 +1,5 @@
-import { useState, useEffect, useRef } from 'react';
-import { motion, useSpring, useTransform } from 'framer-motion';
+import { useState, useEffect } from 'react';
+import { motion, useSpring } from 'framer-motion';
 import { ExternalLink, Github } from 'lucide-react';
 
 interface FlipCardProps {
